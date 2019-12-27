@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="empreviewtrackModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="empreviewtrackEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="empreviewtrackModel.sysdiagram" />
+    <EntitySet Name="roletables" EntityType="empreviewtrackModel.roletable" />
+    <EntitySet Name="emptables" EntityType="empreviewtrackModel.emptable" />
+    <EntitySet Name="reviewtables" EntityType="empreviewtrackModel.reviewtable" />
+    <EntitySet Name="questiontables" EntityType="empreviewtrackModel.questiontable" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="roletable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="roleid" Nullable="false" />
+    <Property Type="String" Name="rolename" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="emptable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="employeeid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date_of_joining" Nullable="false" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="teamleader" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="designation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="inserted_by" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="roleid" />
+  </EntityType>
+  <EntityType Name="reviewtable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="employeeid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" />
+    <Property Type="String" Name="comment" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="qid" />
+    <Property Type="String" Name="givenby" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="mark" />
+    <Property Type="String" Name="overallcomment" MaxLength="700" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="questiontable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="question" Nullable="false" MaxLength="700" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="qid" />
+  </EntityType>
+</Schema>

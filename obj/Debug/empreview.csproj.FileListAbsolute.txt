@@ -1,0 +1,10 @@
+E:\code\csharp\empreview\empreview\bin\empreview.dll
+E:\code\csharp\empreview\empreview\bin\empreview.pdb
+E:\code\csharp\empreview\empreview\obj\Debug\empreview.dll
+E:\code\csharp\empreview\empreview\obj\Debug\empreview.pdb
+E:\code\csharp\empreview\empreview\obj\Debug\empreview.csprojResolveAssemblyReference.cache
+E:\programs\dotnet\empreview\empreview\bin\empreview.dll
+E:\programs\dotnet\empreview\empreview\bin\empreview.pdb
+E:\programs\dotnet\empreview\empreview\obj\Debug\empreview.csprojResolveAssemblyReference.cache
+E:\programs\dotnet\empreview\empreview\obj\Debug\empreview.dll
+E:\programs\dotnet\empreview\empreview\obj\Debug\empreview.pdb

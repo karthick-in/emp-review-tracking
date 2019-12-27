@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="empreviewtrackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="empreviewtrackModelStoreContainer">
+    <EntitySet Name="emptable" EntityType="empreviewtrackModel.Store.emptable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="questiontable" EntityType="empreviewtrackModel.Store.questiontable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="reviewtable" EntityType="empreviewtrackModel.Store.reviewtable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="roletable" EntityType="empreviewtrackModel.Store.roletable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="empreviewtrackModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="emptable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="employeeid" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="varchar(max)" Nullable="false" />
+    <Property Name="date_of_joining" Type="datetime" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="teamleader" Type="varchar" MaxLength="50" />
+    <Property Name="designation" Type="varchar" MaxLength="50" />
+    <Property Name="inserted_by" Type="varchar" MaxLength="50" />
+    <Property Name="roleid" Type="int" />
+  </EntityType>
+  <EntityType Name="questiontable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="question" Type="varchar" Nullable="false" MaxLength="700" />
+    <Property Name="qid" Type="int" />
+  </EntityType>
+  <EntityType Name="reviewtable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="employeeid" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="comment" Type="varchar(max)" />
+    <Property Name="qid" Type="int" />
+    <Property Name="givenby" Type="varchar" MaxLength="50" />
+    <Property Name="mark" Type="int" />
+    <Property Name="overallcomment" Type="varchar" MaxLength="700" />
+  </EntityType>
+  <EntityType Name="roletable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="rolename" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+</Schema>
